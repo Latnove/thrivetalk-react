@@ -1,0 +1,7 @@
+// Исходный код для автоматического форматирования с помощью prettier
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "turboConsoleLog.delimiterInsideMessage": "",
+  "turboConsoleLog.quote": "'",
+}
