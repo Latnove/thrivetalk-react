@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Container, MainText } from '../../components'
 import { stand_girl } from '../../assets/images/images.js'
 
