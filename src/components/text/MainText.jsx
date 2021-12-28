@@ -5,7 +5,7 @@ const MainText = styled.p`
   color: #fff;
   font-size: 24px;
   font-weight: 400;
-  line-height: 1.75791em;
+  line-height: ${props => (props.introText ? '1.75791em' : '1.457em')};
 
   @media (max-width: 1200px) {
     font-size: ${props => (props.introText ? '20px' : '24px')};
