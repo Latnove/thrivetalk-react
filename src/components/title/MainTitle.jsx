@@ -6,7 +6,7 @@ const MainTitle = styled.h3`
   line-height: 1.4375em;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #22356f;
+  color: var(--color-dark-blue);
 
   @media (max-width: 544px) {
     font-size: 14px;
