@@ -170,26 +170,34 @@ export default function Navbar() {
 
           <Menu ref={menuRef}>
             <List ref={listRef}>
-              <Link
-                linkText="Home"
-                value={stateObjects}
-                scrollBlock="intro"
-              />
-              <Link
-                linkText="About"
-                value={stateObjects}
-                scrollBlock="about"
-              />
-              <Link
-                linkText="Services"
-                value={stateObjects}
-                scrollBlock="support"
-              />
-              <Link
-                linkText="Blog"
-                value={stateObjects}
-                scrollBlock="blog"
-              />
+              <li>
+                <Link
+                  linkText="Home"
+                  value={stateObjects}
+                  scrollBlock="intro"
+                />
+              </li>
+              <li>
+                <Link
+                  linkText="About"
+                  value={stateObjects}
+                  scrollBlock="about"
+                />
+              </li>
+              <li>
+                <Link
+                  linkText="Services"
+                  value={stateObjects}
+                  scrollBlock="support"
+                />
+              </li>
+              <li>
+                <Link
+                  linkText="Blog"
+                  value={stateObjects}
+                  scrollBlock="blog"
+                />
+              </li>
             </List>
 
             <ContactButton
