@@ -173,22 +173,22 @@ export default function Navbar() {
               <Link
                 linkText="Home"
                 value={stateObjects}
-                scrollBlock=".intro"
+                scrollBlock="intro"
               />
               <Link
                 linkText="About"
                 value={stateObjects}
-                scrollBlock=".about"
+                scrollBlock="about"
               />
               <Link
                 linkText="Services"
                 value={stateObjects}
-                scrollBlock=".support"
+                scrollBlock="support"
               />
               <Link
                 linkText="Blog"
                 value={stateObjects}
-                scrollBlock=".blog"
+                scrollBlock="blog"
               />
             </List>
 
