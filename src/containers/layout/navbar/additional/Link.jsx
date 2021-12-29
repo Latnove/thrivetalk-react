@@ -7,9 +7,23 @@ const LinkStyle = styled.a`
   font-family: 'Larsseit';
   text-decoration: none;
   padding: 0.2142em 0.3571em 0.7142em 0.3571em;
+  position: relative;
+
   @media (min-width: 768px) {
-    &:hover {
-      border-bottom: 1px solid #22356f;
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-dark-blue);
+      transition: 0.4s;
+      transform: scale(0);
+      transform-origin: left;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    &:hover::after {
+      transform: scale(1);
     }
   }
   @media (max-width: 768px) {
@@ -53,10 +67,8 @@ export default React.memo(function Link({ value, linkText, scrollBlock }) {
   }
 
   return (
-    <li>
-      <LinkStyle href="/#" onClick={e => clickLink(e)}>
-        {linkText}
-      </LinkStyle>
-    </li>
+    <LinkStyle href="/#" onClick={e => clickLink(e)}>
+      {linkText}
+    </LinkStyle>
   )
 })
