@@ -433,7 +433,7 @@ const FigureImage = styled.img`
 
 export default function Intro() {
   return (
-    <Block className="intro">
+    <Block id="intro">
       <Background>
         <BackgroundColor posLeft></BackgroundColor>
         <BackgroundColor></BackgroundColor>
