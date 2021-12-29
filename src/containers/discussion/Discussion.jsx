@@ -5,7 +5,10 @@ import { stand_girl } from '../../assets/images/images.js'
 
 const Block = styled.section`
   @media (max-width: 992px) {
-    padding-bottom: 140px;
+    padding-bottom: calc(140px + 40px);
+  }
+  @media (max-width: 992px) {
+    padding-bottom: calc(140px + 45px);
   }
   @media (max-width: 544px) {
     padding: 0 0 0 0;
@@ -54,6 +57,7 @@ const Title = styled.h2`
 `
 const Text = styled(MainText)`
   font-weight: 500;
+  line-height: 1.457em;
   text-align: left;
   max-width: 23.125em;
   margin: 3.125em 0 0 0;
