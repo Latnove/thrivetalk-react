@@ -175,7 +175,7 @@ const Line = styled.span`
 
 export default function Discussion() {
   return (
-    <Block className="discussion">
+    <Block id="discussion">
       <Inner>
         <Container>
           <Title>Why Thrive?</Title>
