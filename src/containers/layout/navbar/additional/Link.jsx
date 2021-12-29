@@ -24,9 +24,9 @@ const LinkStyle = styled.a`
 `
 
 export default React.memo(function Link({ value, linkText, scrollBlock }) {
-  const clickLink = (event, block) => {
+  const clickLink = event => {
     event.preventDefault()
-    const scrollToBlock = document.querySelector(block)
+    const scrollToBlock = document.getElementById(scrollBlock)
 
     const scrollValue =
       scrollToBlock.getBoundingClientRect().top +
@@ -54,7 +54,7 @@ export default React.memo(function Link({ value, linkText, scrollBlock }) {
 
   return (
     <li>
-      <LinkStyle href="/#" onClick={e => clickLink(e, scrollBlock)}>
+      <LinkStyle href="/#" onClick={e => clickLink(e)}>
         {linkText}
       </LinkStyle>
     </li>
