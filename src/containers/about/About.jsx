@@ -2,9 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Container, MainText, MainTitle } from '../../components'
 
-const Block = styled.section`
-  /*  */
-`
 const Inner = styled(Container)`
   padding: 156px 0 0 0;
   position: relative;
@@ -44,7 +41,7 @@ const Text = styled(MainText)`
   font-weight: 500;
   line-height: 1.40625em;
   letter-spacing: 0.005em;
-  color: #22356f;
+  color: var(--color-dark-blue);
   max-width: 24.6667em;
   margin: 0 auto;
 
