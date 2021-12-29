@@ -117,7 +117,7 @@ const Logo = styled(SiteLogo)`
 `
 const Title = styled.h1`
   font-family: Larsseit;
-  color: #22356f;
+  color: var(--color-dark-blue);
   font-weight: 700;
   font-size: 48px;
   letter-spacing: -0.0417em;
@@ -152,7 +152,7 @@ const Title = styled.h1`
 `
 const Text = styled(MainText)`
   line-height: 1.75791em;
-  color: #22356f;
+  color: var(--color-dark-blue);
   margin: 2.96em 0 0 0;
 
   @media (max-width: 1200px) {
@@ -202,11 +202,25 @@ const Links = styled.div`
     background-color: #eea11d;
     border-radius: 1.41em;
   }
-  & Button:nth-of-type(2) span:hover {
-    color: #eea11d;
+  & Button:nth-of-type(2) {
+    position: relative;
 
-    padding-bottom: 8px;
-    border-bottom: 2px solid #2144a3;
+    & span::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: #2144a3;
+      transform: scale(0);
+      transform-origin: center;
+      transition: 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+    }
+    & span:hover::after {
+      color: #eea11d;
+      transform: scale(1);
+    }
   }
 
   @media (max-width: 1200px) {
