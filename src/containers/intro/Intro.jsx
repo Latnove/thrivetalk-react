@@ -151,6 +151,7 @@ const Title = styled.h1`
   }
 `
 const Text = styled(MainText)`
+  line-height: 1.75791em;
   color: #22356f;
   margin: 2.96em 0 0 0;
 
@@ -454,7 +455,7 @@ export default function Intro() {
               </Text>
 
               <Links>
-                <Button text="Who am I" block="about-us" />
+                <Button text="Who am I" block="about" />
                 <Button text="What do I do" block="CTA" />
               </Links>
             </Inner>
