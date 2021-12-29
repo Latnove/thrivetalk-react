@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Container, SiteLogo, Button, MainText } from '../../components'
 import { interview } from '../../assets/images/images.js'
 
-const IntroBlock = styled.section`
+const Block = styled.section`
   width: 100%;
   height: 100%;
   position: relative;
@@ -414,7 +414,7 @@ const FigureImage = styled.img`
     left: 41%;
     top: 0;
     width: 100%;
-    max-width: none;
+    max-width: initial;
     min-width: 770px;
     height: auto;
     min-height: 100%;
@@ -424,7 +424,7 @@ const FigureImage = styled.img`
     top: 55%;
     left: 40%;
     width: auto;
-    min-width: 0;
+    min-width: initial;
     height: 19em; /* 16px - font-size */
     min-height: 0;
     transform: translate(-50%, -50%);
@@ -433,7 +433,7 @@ const FigureImage = styled.img`
 
 export default function Intro() {
   return (
-    <IntroBlock className="intro">
+    <Block className="intro">
       <Background>
         <BackgroundColor posLeft></BackgroundColor>
         <BackgroundColor></BackgroundColor>
@@ -469,6 +469,6 @@ export default function Intro() {
           </Figure>
         </SecondPart>
       </IntroBody>
-    </IntroBlock>
+    </Block>
   )
 }
