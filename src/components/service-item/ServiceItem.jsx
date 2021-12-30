@@ -1,9 +1,10 @@
+import randomColor from 'randomcolor'
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
 const Item = styled.div`
-  background-color: #ddd;
-  width: ${props => (props.width ? props.width : 0)};
+  background-color: ${props => props.bacgroundColor};
+  width: ${props => props.width};
   height: ${props => (props.height ? props.height : '360px')};
   max-height: 440px;
 `
@@ -34,9 +35,13 @@ const Text = styled.ul`
   }
 `
 
-export default React.memo(function ServiceItem({ width }) {
+export default React.memo(function ServiceItem({
+  width,
+  itemColor = null,
+}) {
   const [itemHeight, setItemHeight] = useState(null)
   const itemRef = useRef(null)
+  const colorRef = useRef(itemColor)
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -46,7 +51,14 @@ export default React.memo(function ServiceItem({ width }) {
 
   useEffect(() => {
     setHeight()
-  }, [itemRef])
+
+    if (colorRef.current === null) {
+      colorRef.current = randomColor({
+        luminosity: 'bright',
+        format: 'hex',
+      })
+    }
+  }, [itemRef, colorRef])
 
   function setHeight(elementWidth) {
     elementWidth = itemRef.current.offsetWidth
@@ -54,7 +66,12 @@ export default React.memo(function ServiceItem({ width }) {
   }
 
   return (
-    <Item width={width} ref={itemRef} height={itemHeight}>
+    <Item
+      width={width}
+      ref={itemRef}
+      height={itemHeight}
+      bacgroundColor={colorRef.current}
+    >
       <Content>
         <Line></Line>
         <Text>
