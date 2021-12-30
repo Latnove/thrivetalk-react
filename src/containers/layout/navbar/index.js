@@ -1,4 +1,4 @@
-export { default as Link } from './additional/Link'
-export { default as Logo } from './additional/Logo'
-export { default as ContactButton } from './additional/ContactButton'
-export { default as Burger } from './additional/Burger'
+export { default as Link } from './link/Link'
+export { default as Logo } from './logo/Logo'
+export { default as ContactButton } from './contact-button/ContactButton'
+export { default as Burger } from './burger/Burger'
