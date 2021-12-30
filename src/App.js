@@ -1,6 +1,13 @@
 import React from 'react'
 
-import { Discussion, About, Intro, Navbar, Footer } from './containers'
+import {
+  Navbar,
+  Intro,
+  Discussion,
+  About,
+  Services,
+  Footer,
+} from './containers'
 
 import './App.css'
 
@@ -11,6 +18,7 @@ const App = () => {
       <Intro />
       <Discussion />
       <About />
+      <Services />
       <Footer />
     </div>
   )
