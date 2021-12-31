@@ -6,6 +6,7 @@ import {
   Discussion,
   About,
   Services,
+  Benefits,
   Footer,
 } from './containers'
 
@@ -19,6 +20,7 @@ const App = () => {
       <Discussion />
       <About />
       <Services />
+      <Benefits />
       <Footer />
     </div>
   )
