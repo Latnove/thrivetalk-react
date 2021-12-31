@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 
 const Contact = styled.div`
@@ -33,6 +33,7 @@ const ContactLink = styled.button`
   border-radius: 3.5714285em;
   &:hover {
     background-color: #296dcc;
+    transition: all 0.7s;
   }
   @media (max-width: 768px) {
     margin: 0 auto;
@@ -53,21 +54,27 @@ export default React.memo(function ContactButton({
   value,
 }) {
   const [topHeight, setTopHeight] = useState(null)
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight)
+  const windowHeight = useRef(window.innerHeight)
 
   useEffect(() => {
-    if (list !== null) {
-      const listHeight =
-        list.current.offsetHeight + value.nav.current.offsetHeight
-      setTopHeight(((windowHeight - listHeight) / windowHeight) * 100)
+    function setContactHeight() {
+      if (list !== null) {
+        const listHeight =
+          list.current.offsetHeight + value.nav.current.offsetHeight
+        setTopHeight(
+          ((windowHeight.current - listHeight) / windowHeight.current) *
+            100
+        )
+      }
     }
-  }, [windowHeight, list, value])
 
-  useEffect(() => {
     window.addEventListener('resize', () => {
-      setWindowHeight(window.innerHeight)
+      windowHeight.current = window.innerHeight
+      setContactHeight()
     })
-  }, [])
+
+    setContactHeight()
+  }, [list, value])
 
   return (
     <Contact height={topHeight} existence={activity}>
