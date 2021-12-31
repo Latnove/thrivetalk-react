@@ -5,10 +5,10 @@ import { stand_girl } from '../../assets/images/images.js'
 
 const Block = styled.section`
   @media (max-width: 992px) {
-    padding-bottom: calc(140px + 40px);
+    padding-bottom: calc(140px + 30px);
   }
-  @media (max-width: 992px) {
-    padding-bottom: calc(140px + 45px);
+  @media (max-width: 768px) {
+    padding-bottom: calc(140px + 40px);
   }
   @media (max-width: 544px) {
     padding: 0 0 0 0;
