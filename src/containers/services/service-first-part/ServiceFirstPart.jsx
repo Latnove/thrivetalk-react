@@ -14,7 +14,7 @@ const Inner = styled.div`
   @media (max-width: 1200px) {
     margin-top: 20px;
     & > div {
-      max-height: 300px;
+      max-height: 320px;
     }
   }
   @media (max-width: 544px) {
@@ -26,13 +26,13 @@ const Inner = styled.div`
   @media (max-width: 440px) {
     margin-top: 18px;
     & > div {
-      max-height: 325px;
+      max-height: 280px;
     }
   }
   @media (max-width: 320px) {
     margin-top: 16px;
     & > div {
-      max-height: 260px;
+      max-height: 240px;
     }
   }
 `
@@ -57,6 +57,7 @@ export default function ServiceFirstPart() {
       setValueWidth('50%')
     }
   }
+
   return (
     <Inner>
       <ServiceItem
@@ -69,7 +70,7 @@ export default function ServiceFirstPart() {
         itemColor="#C4E769"
         titleText="Running & Spinning"
       />
-      {/* <ServiceItem
+      <ServiceItem
         itemWidth={valueWidth}
         itemColor="#62D0DF"
         titleText="Pumping Iron"
@@ -78,7 +79,7 @@ export default function ServiceFirstPart() {
         itemWidth={valueWidth}
         itemColor="#0052C1"
         titleText="Swimming"
-      /> */}
+      />
     </Inner>
   )
 }
