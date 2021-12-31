@@ -1,5 +1,6 @@
 import interview from './intro-images/5f29d8a75b684bbc23a23ba5bc08f70c.jpg'
 import stand_girl from './disscussion-images/f6d99ec32809b2909cd26d32dec3f462.jpg'
+import cocktail_cup from './services-images/92a80edb8b973a793ef7422d5a3e4496.jfif'
 import test from './test-images/Kakie-proverki-mogut-zhdat-IP.jpg'
 
-export { interview, stand_girl, test }
+export { interview, stand_girl, cocktail_cup, test }
