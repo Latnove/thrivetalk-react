@@ -188,7 +188,7 @@ export default function Navbar() {
                 <Link
                   linkText="Services"
                   value={stateObjects}
-                  scrollBlock="support"
+                  scrollBlock="services"
                 />
               </li>
               <li>
