@@ -450,8 +450,8 @@ export default function Intro() {
   return (
     <Block id="intro">
       <Background>
-        <BackgroundColor posLeft></BackgroundColor>
-        <BackgroundColor></BackgroundColor>
+        <BackgroundColor posLeft />
+        <BackgroundColor />
       </Background>
 
       <IntroBody>
