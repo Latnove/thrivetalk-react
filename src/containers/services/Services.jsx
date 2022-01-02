@@ -55,7 +55,7 @@ export default function Services() {
           <MainTitle onClick={clickTitle}>WE CAN HELP YOU WITH</MainTitle>
         </Row>
         <ServiceFirstPart />
-        {/* <ServiceSecondPart /> */}
+        <ServiceSecondPart />
       </Inner>
     </section>
   )
