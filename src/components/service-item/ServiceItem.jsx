@@ -4,13 +4,12 @@ import randomColor from 'randomcolor'
 import { cocktail_cup } from '../../assets/images/images.js'
 
 const Item = styled.div`
-  width: ${props => props.width};
   height: ${props => props.height + 'px'};
   background-color: ${props => props.backgroundColor};
   user-select: none;
   position: relative;
 
-  &._active:hover {
+  &._active {
     background-color: initial;
     transition: all 0.6s;
     ::before {
@@ -55,7 +54,8 @@ const Text = styled.div`
   & p {
     font-size: 32px;
     font-family: Larsseit;
-    line-height: 1.1764em;
+    font-weight: 700;
+    line-height: 1.12em;
     letter-spacing: -0.006em;
     max-width: 6.25em;
     margin: 0 0 0 25px;
@@ -78,23 +78,24 @@ const Text = styled.div`
 `
 
 export default React.memo(function ServiceItem({
-  itemWidth = null,
   itemColor = null,
   titleText,
 }) {
   const [itemHeight, setItemHeight] = useState(null)
 
   const itemRef = useRef(null)
+  const itemStyleRef = useRef(null)
   const colorRef = useRef(itemColor)
   const valueTopRef = useRef(null) // * For <Line>
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      setHeight()
       if (itemRef.current.classList.contains('_active')) {
+        setHeight()
         itemRef.current.classList.remove('_active')
       }
     })
+
     itemRef.current.addEventListener('mouseover', () => {
       itemRef.current.classList.add('_active')
     })
@@ -104,6 +105,7 @@ export default React.memo(function ServiceItem({
   }, [])
 
   useEffect(() => {
+    itemStyleRef.current = getComputedStyle(itemRef.current)
     if (colorRef.current === null) {
       colorRef.current = randomColor({
         luminosity: 'bright',
@@ -111,18 +113,26 @@ export default React.memo(function ServiceItem({
       })
     }
 
-    if (itemWidth !== null) {
-      setHeight()
-    }
-  }, [itemWidth])
+    setHeight()
+  }, [itemRef])
 
-  function setHeight(sideOfSquare) {
-    sideOfSquare = itemRef.current.offsetWidth // Так как у нас Item КВАДРАТНЫЙ
+  function getItemWidth(itemWidth) {
+    // Длина бывает дисятичной, в следствии чего высота у элементов может отличаться на 1px
+    const itemsInRow = Math.floor(
+      window.innerWidth / parseInt(itemStyleRef.current.width, 10)
+    )
+    itemWidth = Math.floor(window.innerWidth / itemsInRow)
+    return itemWidth
+  }
 
-    if (sideOfSquare < sideOfSquare * 1.22) {
+  function setHeight(sideOfSquare, itemMaxHeight) {
+    sideOfSquare = getItemWidth()
+    itemMaxHeight = parseInt(itemStyleRef.current.maxHeight, 10)
+
+    if (sideOfSquare < itemMaxHeight) {
       valueTopRef.current = 0.2 * sideOfSquare
     } else {
-      valueTopRef.current = 0.2 * sideOfSquare * 1.22
+      valueTopRef.current = 0.2 * itemMaxHeight
     }
 
     setItemHeight(sideOfSquare)
@@ -131,7 +141,6 @@ export default React.memo(function ServiceItem({
   return (
     <Item
       ref={itemRef}
-      width={itemWidth}
       height={itemHeight}
       backgroundColor={colorRef.current}
     >
