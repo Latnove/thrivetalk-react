@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { Icons } from '../icons/'
 
@@ -154,6 +154,7 @@ const Form = styled.form`
     outline: initial !important;
     border: 2px solid #076e4d;
   }
+
   @media (max-width: 768px) {
     margin: 22px 0 0 0;
   }
@@ -235,10 +236,30 @@ const Column = styled.div`
   }
 `
 
-export default React.memo(function ClickPopup({ activity = null }) {
+export default function ClickPopup({ button = null }) {
+  const popupBgRef = useRef(null)
+  const popupRef = useRef(null)
+
+  useEffect(() => {
+    if (button !== null) {
+      button.addEventListener('click', openPopup)
+    }
+  }, [button])
+
+  function openPopup() {
+    popupBgRef.current.classList.add('_active')
+    popupRef.current.classList.add('_active')
+  }
+  function closePopup(event) {
+    if (event.target === popupBgRef.current) {
+      popupBgRef.current.classList.remove('_active')
+      popupRef.current.classList.remove('_active')
+    }
+  }
+
   return (
-    <Background className={activity}>
-      <Popup className={activity}>
+    <Background ref={popupBgRef} onClick={e => closePopup(e)}>
+      <Popup ref={popupRef}>
         <Content>
           <Title>Hi, not a bad choice!</Title>
           <Text>
@@ -253,7 +274,7 @@ export default React.memo(function ClickPopup({ activity = null }) {
               friend!
             </p>
           </Text>
-          <Form action="">
+          <Form action="/click-popup-data">
             <Column>
               <input
                 type="text"
@@ -290,4 +311,4 @@ export default React.memo(function ClickPopup({ activity = null }) {
       </Popup>
     </Background>
   )
-})
+}
