@@ -90,16 +90,16 @@ export default React.memo(function ServiceItem({
 
   useEffect(() => {
     window.addEventListener('resize', () => {
+      setHeight()
       if (itemRef.current.classList.contains('_active')) {
-        setHeight()
         itemRef.current.classList.remove('_active')
       }
     })
 
-    itemRef.current.addEventListener('mouseover', () => {
+    itemRef.current.addEventListener('pointerover', () => {
       itemRef.current.classList.add('_active')
     })
-    itemRef.current.addEventListener('mouseout', () => {
+    itemRef.current.addEventListener('pointerout', () => {
       itemRef.current.classList.remove('_active')
     })
   }, [])
