@@ -4,3 +4,8 @@ export { default as ServiceItem } from './service-item/ServiceItem'
 export { default as SiteLogo } from './logo/Logo'
 export { default as MainText } from './text/MainText'
 export { default as MainTitle } from './title/MainTitle'
+export { default as UserDataModal } from './modal/UserDataModal'
+export { default as Background } from './background/Background'
+export { default as BenefitsItem } from './benefits-item/BenefitsItem'
+
+export { default as debounce } from './debounce/debounce.js'
