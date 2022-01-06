@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const ButtonStyle = styled.button`
@@ -26,43 +26,9 @@ const ButtonStyle = styled.button`
   }
 `
 
-export default React.memo(function Button({
-  text,
-  block = null,
-  isHelp = false,
-}) {
-  const blockRef = useRef(null)
-  const navRef = useRef(null)
-
-  useEffect(() => {
-    navRef.current = document.querySelector('header')
-    if (block) {
-      blockRef.current = document.querySelector(block)
-    }
-  }, [block])
-
-  function scrollToBlock() {
-    const scrollValue =
-      blockRef.current.getBoundingClientRect().top +
-      window.pageYOffset -
-      navRef.current.offsetHeight
-
-    window.scrollTo({
-      top: scrollValue,
-      behavior: 'smooth',
-    })
-  }
-
-  const buttonClick = () => {
-    if (block) {
-      scrollToBlock()
-    } else if (isHelp) {
-      prompt('Введите данные для связи')
-    }
-  }
-
+export default React.memo(function Button({ text, onClick }) {
   return (
-    <ButtonStyle onClick={buttonClick}>
+    <ButtonStyle onClick={onClick} type="button">
       <span>{text}</span>
     </ButtonStyle>
   )
