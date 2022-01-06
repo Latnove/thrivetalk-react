@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BenefitsItem } from '../../components/'
 
 const Inner = styled.div`
-  max-width: 1560px;
+  max-width: 1520px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -36,7 +36,7 @@ const Inner = styled.div`
 
 export default function Benefits() {
   return (
-    <section className="benefits">
+    <section id="benefits">
       <Inner>
         <BenefitsItem
           title="Nutritional Plans"
