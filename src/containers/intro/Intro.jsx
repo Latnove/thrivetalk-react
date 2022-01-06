@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { Container, SiteLogo, Button, MainText } from '../../components'
 import { interview } from '../../assets/images/images.js'
@@ -447,6 +447,25 @@ const FigureImage = styled.img`
 `
 
 export default function Intro() {
+  const navRef = useRef(null)
+
+  useEffect(() => {
+    navRef.current = document.querySelector('header')
+  }, [])
+
+  const scrollToBlock = elementId => {
+    const block = document.getElementById(elementId)
+    const valueToBlock =
+      block.getBoundingClientRect().top +
+      window.scrollY -
+      navRef.current.offsetHeight
+
+    window.scrollTo({
+      top: valueToBlock,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <Block id="intro">
       <Background>
@@ -469,8 +488,14 @@ export default function Intro() {
               </Text>
 
               <Links>
-                <Button text="Who am I" block="about" />
-                <Button text="What do I do" block="CTA" />
+                <Button
+                  text="Who am I"
+                  onClick={elementId => scrollToBlock('about')}
+                />
+                <Button
+                  text="What do I do"
+                  onClick={elementId => scrollToBlock('benefits')}
+                />
               </Links>
             </Inner>
           </Container>
