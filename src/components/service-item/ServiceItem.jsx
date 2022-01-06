@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import randomColor from 'randomcolor'
+import { debounce } from '../../components/'
 import { cocktail_cup } from '../../assets/images/images.js'
 
 const Item = styled.div`
@@ -89,19 +90,28 @@ export default React.memo(function ServiceItem({
   const valueTopRef = useRef(null) // * For <Line>
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       setHeight()
       if (itemRef.current.classList.contains('_active')) {
         itemRef.current.classList.remove('_active')
       }
-    })
-
-    itemRef.current.addEventListener('pointerover', () => {
+    }
+    const handlePointerOver = () => {
       itemRef.current.classList.add('_active')
-    })
-    itemRef.current.addEventListener('pointerout', () => {
+    }
+    const handlePointerOut = () => {
       itemRef.current.classList.remove('_active')
-    })
+    }
+
+    window.addEventListener('resize', debounce(handleResize, 400))
+    itemRef.current.addEventListener('pointerover', handlePointerOver)
+    itemRef.current.addEventListener('pointerout', handlePointerOut)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      itemRef.current.removeEventListener('pointerover', handlePointerOver)
+      itemRef.current.removeEventListener('pointerout', handlePointerOut)
+    }
   }, [])
 
   useEffect(() => {
