@@ -21,6 +21,7 @@ const Item = styled.div`
 const Content = styled.div`
   h3 {
     font-size: 28px;
+    font-weight: 400;
     line-height: 1.178em;
     letter-spacing: -0.03em;
     padding: 1.965em 0 0 0;
