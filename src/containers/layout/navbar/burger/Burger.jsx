@@ -76,7 +76,7 @@ export default React.memo(function Burger({ value }) {
     }, 400)
   }
 
-  const clickBurger = () => {
+  const handleClick = () => {
     if (
       (!value.nav.current.classList.contains('_burger-menu-active') &&
         window.scrollY <= 0) ||
@@ -84,7 +84,6 @@ export default React.memo(function Burger({ value }) {
     ) {
       value.isMenuOpen.current = true
       value.nav.current.classList.add('_burger-menu-active')
-
       clearTimeout(fadeDelay.current)
     } else if (value.isMenuOpen.current === true) {
       value.isMenuOpen.current = false
@@ -97,7 +96,7 @@ export default React.memo(function Burger({ value }) {
   }
 
   return (
-    <BurgerMenu ref={value.burger} onClick={clickBurger}>
+    <BurgerMenu ref={value.burger} onClick={handleClick}>
       <span></span>
     </BurgerMenu>
   )

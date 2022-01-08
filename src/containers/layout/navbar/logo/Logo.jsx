@@ -22,7 +22,7 @@ const HeaderLogo = styled(SiteLogo)`
 `
 
 export default React.memo(function Logo({ value }) {
-  const clickLogo = zeroPosition => {
+  const handleClick = zeroPosition => {
     if (
       !value.nav.current.classList.contains('_burger-menu-active') ||
       value.isMenuOpen.current === false
@@ -37,7 +37,7 @@ export default React.memo(function Logo({ value }) {
   }
 
   return (
-    <HeaderLogo ref={value.logo} onClick={clickLogo}>
+    <HeaderLogo ref={value.logo} onClick={handleClick}>
       Thrivetalk
     </HeaderLogo>
   )
