@@ -11,7 +11,6 @@ const Header = styled.header`
   top: 0;
   left: 0;
   z-index: 50;
-
   &._header-scroll::before,
   &._burger-menu-active::before {
     background-color: var(--color-navbar);
@@ -143,7 +142,25 @@ export default function Navbar() {
   useEffect(() => {
     window.addEventListener('scroll', scrollCheck)
     document.addEventListener('DOMContentLoaded', scrollCheck)
+
+    return () => {
+      window.removeEventListener('scroll', scrollCheck)
+      document.removeEventListener('DOMContentLoaded', scrollCheck)
+    }
   }, [])
+
+  const handleClick = blockId => {
+    const scrollBlock = document.getElementById(blockId)
+    const scrollValue =
+      scrollBlock.getBoundingClientRect().top +
+      window.pageYOffset -
+      navRef.current.offsetHeight
+
+    window.scrollTo({
+      top: scrollValue,
+      behavior: 'smooth',
+    })
+  }
 
   function scrollCheck() {
     let scrollY = window.scrollY
@@ -174,39 +191,40 @@ export default function Navbar() {
                 <Link
                   linkText="Home"
                   value={stateObjects}
-                  scrollBlock="intro"
+                  blockId="intro"
                 />
               </li>
               <li>
                 <Link
                   linkText="About"
                   value={stateObjects}
-                  scrollBlock="about"
+                  blockId="about"
                 />
               </li>
               <li>
                 <Link
                   linkText="Services"
                   value={stateObjects}
-                  scrollBlock="services"
+                  blockId="services"
                 />
               </li>
               <li>
                 <Link
                   linkText="Blog"
                   value={stateObjects}
-                  scrollBlock="blog"
+                  blockId="blog"
                 />
               </li>
             </List>
 
             <ContactButton
+              onClick={blockId => handleClick('contact-us')}
               activity={'none'}
               value={stateObjects}
               list={listRef}
             />
           </Menu>
-          <ContactButton />
+          <ContactButton onClick={blockId => handleClick('contact-us')} />
         </HeaderBody>
       </Container>
     </Header>
