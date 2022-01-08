@@ -218,13 +218,13 @@ export default function Navbar() {
             </List>
 
             <ContactButton
-              onClick={blockId => handleClick('contact-us')}
               activity={'none'}
+              blockId="contact-us"
               value={stateObjects}
               list={listRef}
             />
           </Menu>
-          <ContactButton onClick={blockId => handleClick('contact-us')} />
+          <ContactButton blockId="contact-us" />
         </HeaderBody>
       </Container>
     </Header>
