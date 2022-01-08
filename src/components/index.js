@@ -5,7 +5,6 @@ export { default as Background } from './background/Background'
 export { default as BenefitsItem } from './benefits-item/BenefitsItem'
 export { default as CTAText } from './text/CTAText.jsx'
 
-export { default as debounce } from './debounce/debounce.js'
 export { default as Container } from './container/Container.js'
 export { default as MainTitle } from './title/MainTitle.js'
 export { default as MainText } from './text/MainText.js'
