@@ -37,13 +37,13 @@ const LinkStyle = styled.a`
   }
 `
 
-export default React.memo(function Link({ value, linkText, scrollBlock }) {
-  const clickLink = event => {
+export default React.memo(function Link({ value, linkText, blockId }) {
+  const handleClick = event => {
     event.preventDefault()
-    const scrollToBlock = document.getElementById(scrollBlock)
+    const scrollBlock = document.getElementById(blockId)
 
     const scrollValue =
-      scrollToBlock.getBoundingClientRect().top +
+      scrollBlock.getBoundingClientRect().top +
       window.pageYOffset -
       value.nav.current.offsetHeight
 
@@ -67,7 +67,7 @@ export default React.memo(function Link({ value, linkText, scrollBlock }) {
   }
 
   return (
-    <LinkStyle href="/#" onClick={e => clickLink(e)}>
+    <LinkStyle href="/#" onClick={e => handleClick(e)}>
       {linkText}
     </LinkStyle>
   )
