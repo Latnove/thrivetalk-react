@@ -7,7 +7,7 @@ const ButtonStyle = styled.button`
   letter-spacing: 0.105em;
   font-style: 700;
 
-  color: #fab63e;
+  color: ${props => props.textColor};
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -26,9 +26,13 @@ const ButtonStyle = styled.button`
   }
 `
 
-export default React.memo(function Button({ text, onClick }) {
+export default React.memo(function Button({
+  text,
+  textColor = '#fab63e',
+  onClick,
+}) {
   return (
-    <ButtonStyle onClick={onClick} type="button">
+    <ButtonStyle onClick={onClick} type="button" textColor={textColor}>
       <span>{text}</span>
     </ButtonStyle>
   )
