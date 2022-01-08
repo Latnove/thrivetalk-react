@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import randomColor from 'randomcolor'
-import { debounce } from '../../components/'
+import debounce from '../../components/utilities/debounce'
 import { cocktail_cup } from '../../assets/images/images.js'
 
 const Item = styled.div`
