@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
-import { debounce } from '../../../../components/'
+import debounce from '../../../../components/utilities/debounce'
 
 const Contact = styled.div`
   position: relative;
