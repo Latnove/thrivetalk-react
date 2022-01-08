@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import scrollTo from '../../../../components/utilities/scrollTo'
 
 const LinkStyle = styled.a`
   color: #22356f;
@@ -40,13 +41,6 @@ const LinkStyle = styled.a`
 export default React.memo(function Link({ value, linkText, blockId }) {
   const handleClick = event => {
     event.preventDefault()
-    const scrollBlock = document.getElementById(blockId)
-
-    const scrollValue =
-      scrollBlock.getBoundingClientRect().top +
-      window.pageYOffset -
-      value.nav.current.offsetHeight
-
     if (value.burger.current.classList.contains('_active')) {
       document.body.classList.remove('_lock')
       value.burger.current.classList.remove('_active')
@@ -60,10 +54,7 @@ export default React.memo(function Link({ value, linkText, blockId }) {
       }, 400) // Время исчезновения menu
     }
 
-    window.scrollTo({
-      top: scrollValue,
-      behavior: 'smooth',
-    })
+    scrollTo(blockId)
   }
 
   return (
