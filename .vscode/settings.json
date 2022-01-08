@@ -1,7 +1,102 @@
 // Исходный код для автоматического форматирования с помощью prettier
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //Window
+  "window.zoomLevel": 2,
+  "window.openFilesInNewWindow": "off",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.folding": false,
+  "editor.insertSpaces": false,
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "editor.detectIndentation": true,
+  "editor.suggestSelection": "first",
+  // Определяет, будет ли редактор прокручиваться за пределы последней строки
+  "editor.scrollBeyondLastLine": true,
+  "editor.snippetSuggestions": "bottom",
+  "editor.multiCursorModifier": "ctrlCmd",
+  // Управляет, должен ли редактор отображать управляющие символы
+  "editor.renderControlCharacters": false,
+
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+
+  // Appearance
+  "editor.cursorBlinking": "expand",
+  "editor.bracketPairColorization.enabled": false,
+
+  // Font
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "JetBrains Mono, IBM Plex Mono, monospace",
+
+  // Explorer
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "never",
+
+  // Workbench
+  "workbench.colorTheme": "Omni",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.startupEditor": "newUntitledFile",
+
+  // Degug
+  "debug.toolBarLocation": "hidden",
+  "debug.focusWindowOnBreak": false,
+  "debug.showInlineBreakpointCandidates": false,
+  "debug.showBreakpointsInOverviewRuler": false,
+
+  // Prettier
   "editor.formatOnSave": true,
-  "turboConsoleLog.delimiterInsideMessage": "",
-  "turboConsoleLog.quote": "'",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Terminal
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.tabs.enabled": false,
+
+  // Other
+  "files.defaultLanguage": "plaintext",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "html.completion.attributeDefaultValue": "singlequotes",
+
+  // JS & TS
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Spell checker
+  "cSpell.language": "en,ru",
+  "cSpell.userWords": [
+    "browserslist",
+    "randomcolor",
+    "Larsseit",
+    "Thrivetalk"
+  ],
+  "cSpell.enabled": true,
+  "cSpell.enableFiletypes": ["jsx", "sass"],
+
+  "workbench.activityBar.visible": false
 }
