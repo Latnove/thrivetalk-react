@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
+import { debounce } from '../../../../components/'
 
 const Contact = styled.div`
   position: relative;
@@ -51,6 +52,7 @@ const ContactLink = styled.button`
 export default React.memo(function ContactButton({
   list = null,
   activity = null,
+  onClick,
   value,
 }) {
   const [topHeight, setTopHeight] = useState(null)
@@ -67,18 +69,22 @@ export default React.memo(function ContactButton({
         )
       }
     }
-
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       windowHeight.current = window.innerHeight
       setContactHeight()
-    })
+    }
 
+    window.addEventListener('resize', debounce(handleResize, 500))
     setContactHeight()
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
   }, [list, value])
 
   return (
     <Contact height={topHeight} existence={activity}>
-      <ContactLink data-goto="#">Contact us</ContactLink>
+      <ContactLink onClick={onClick}>Contact us</ContactLink>
     </Contact>
   )
 })
