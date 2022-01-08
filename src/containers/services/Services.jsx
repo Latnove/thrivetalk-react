@@ -37,7 +37,7 @@ export default function Services() {
     navRef.current = document.querySelector('header')
   }, [])
 
-  function clickTitle() {
+  function titleClick() {
     const scrollValue =
       servicesRef.current.getBoundingClientRect().top -
       navRef.current.offsetHeight
@@ -52,7 +52,7 @@ export default function Services() {
     <section ref={servicesRef} id="services">
       <Inner>
         <Row>
-          <MainTitle onClick={clickTitle}>WE CAN HELP YOU WITH</MainTitle>
+          <MainTitle onClick={titleClick}>WE CAN HELP YOU WITH</MainTitle>
         </Row>
         <ServiceFirstPart />
         <ServiceSecondPart />
