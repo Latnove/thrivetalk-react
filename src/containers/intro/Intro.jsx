@@ -192,7 +192,6 @@ const Links = styled.div`
   & Button:nth-of-type(1) {
     width: 9.375em;
     height: 3.125em;
-    color: #fff;
     background-color: #f9b640;
     display: flex;
     justify-content: center;
@@ -490,10 +489,12 @@ export default function Intro() {
               <Links>
                 <Button
                   text="Who am I"
+                  textColor="#fff"
                   onClick={elementId => scrollToBlock('about')}
                 />
                 <Button
                   text="What do I do"
+                  textColor="#fab63e"
                   onClick={elementId => scrollToBlock('benefits')}
                 />
               </Links>
