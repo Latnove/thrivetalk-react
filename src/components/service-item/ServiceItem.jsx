@@ -127,7 +127,7 @@ export default React.memo(function ServiceItem({
   }, [itemRef])
 
   function getItemWidth(itemWidth) {
-    // Длина бывает дисятичной, в следствии чего высота у элементов может отличаться на 1px
+    // Длина бывает десятичной, в следствии чего высота у элементов может отличаться на 1px
     const itemsInRow = Math.floor(
       window.innerWidth / parseInt(itemStyleRef.current.width, 10)
     )
