@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import debounce from '../../../../components/utilities/debounce'
+import scrollTo from '../../../../components/utilities/scrollTo'
 
 const Contact = styled.div`
   position: relative;
@@ -52,7 +53,7 @@ const ContactLink = styled.button`
 export default React.memo(function ContactButton({
   list = null,
   activity = null,
-  onClick,
+  blockId,
   value,
 }) {
   const [topHeight, setTopHeight] = useState(null)
@@ -76,7 +77,6 @@ export default React.memo(function ContactButton({
 
     window.addEventListener('resize', debounce(handleResize, 500))
     setContactHeight()
-
     return () => {
       window.removeEventListener('resize', handleResize)
     }
@@ -84,7 +84,9 @@ export default React.memo(function ContactButton({
 
   return (
     <Contact height={topHeight} existence={activity}>
-      <ContactLink onClick={onClick}>Contact us</ContactLink>
+      <ContactLink onClick={elementId => scrollTo(blockId)}>
+        Contact us
+      </ContactLink>
     </Contact>
   )
 })
