@@ -57,6 +57,8 @@ const Menu = styled.nav`
   text-align: center;
   margin: 0 auto;
   @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
     width: 280px;
     height: 100%;
     text-align: initial;
@@ -96,17 +98,17 @@ const List = styled.ul`
     list-style: none;
   }
   @media (max-width: 768px) {
+    flex-direction: column;
     gap: 0;
-    display: block;
     & > li {
       height: 44px;
-      display: flex;
       /* Сделал в виде таблицы */
       background-color: var(--color-menu-burger-link);
       border-top: 1px solid rgb(133, 0, 133);
       border-bottom: 0;
       border-left: 0;
       border-right: 0;
+      position: relative;
     }
     &:last-of-type {
       border-bottom: 1px solid rgb(133, 0, 133);
@@ -115,11 +117,6 @@ const List = styled.ul`
       background-color: rgb(255, 248, 143);
     }
   }
-  /* @media (max-width: 320px) {
-    &:last-of-type {
-      margin-bottom: 93px;
-    }
-  } */
 `
 
 export default function Navbar() {
@@ -217,12 +214,7 @@ export default function Navbar() {
               </li>
             </List>
 
-            <ContactButton
-              activity={'none'}
-              blockId="contact-us"
-              value={stateObjects}
-              list={listRef}
-            />
+            <ContactButton activity={'none'} blockId="contact-us" />
           </Menu>
           <ContactButton blockId="contact-us" />
         </HeaderBody>
