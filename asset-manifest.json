@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/thrivetalk-react/static/css/main.b1a086eb.chunk.css",
+    "main.js": "/thrivetalk-react/static/js/main.a10ed6d7.chunk.js",
+    "main.js.map": "/thrivetalk-react/static/js/main.a10ed6d7.chunk.js.map",
+    "runtime-main.js": "/thrivetalk-react/static/js/runtime-main.8ff885bb.js",
+    "runtime-main.js.map": "/thrivetalk-react/static/js/runtime-main.8ff885bb.js.map",
+    "static/js/2.3fa06344.chunk.js": "/thrivetalk-react/static/js/2.3fa06344.chunk.js",
+    "static/js/2.3fa06344.chunk.js.map": "/thrivetalk-react/static/js/2.3fa06344.chunk.js.map",
+    "index.html": "/thrivetalk-react/index.html",
+    "static/css/main.b1a086eb.chunk.css.map": "/thrivetalk-react/static/css/main.b1a086eb.chunk.css.map",
+    "static/js/2.3fa06344.chunk.js.LICENSE.txt": "/thrivetalk-react/static/js/2.3fa06344.chunk.js.LICENSE.txt",
+    "static/media/5f29d8a75b684bbc23a23ba5bc08f70c.32668aaa.jpg": "/thrivetalk-react/static/media/5f29d8a75b684bbc23a23ba5bc08f70c.32668aaa.jpg",
+    "static/media/92a80edb8b973a793ef7422d5a3e4496.735941be.jpg": "/thrivetalk-react/static/media/92a80edb8b973a793ef7422d5a3e4496.735941be.jpg",
+    "static/media/Kakie-proverki-mogut-zhdat-IP.f9edd511.jpg": "/thrivetalk-react/static/media/Kakie-proverki-mogut-zhdat-IP.f9edd511.jpg",
+    "static/media/index.css": "/thrivetalk-react/static/media/Larsseit.d92033ad.woff",
+    "static/media/acfdbf3563c8350cda6977544fe04db8.90f16ddd.jpg": "/thrivetalk-react/static/media/acfdbf3563c8350cda6977544fe04db8.90f16ddd.jpg",
+    "static/media/d424b642272b56a5cfa35e148bdd74b0.e1f44934.jpg": "/thrivetalk-react/static/media/d424b642272b56a5cfa35e148bdd74b0.e1f44934.jpg",
+    "static/media/eb608eb956037170f9f190249c60a153.83772b87.jpg": "/thrivetalk-react/static/media/eb608eb956037170f9f190249c60a153.83772b87.jpg",
+    "static/media/f6d99ec32809b2909cd26d32dec3f462.6fc34a02.jpg": "/thrivetalk-react/static/media/f6d99ec32809b2909cd26d32dec3f462.6fc34a02.jpg",
+    "static/media/icons.dceefd06.svg": "/thrivetalk-react/static/media/icons.dceefd06.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ff885bb.js",
+    "static/js/2.3fa06344.chunk.js",
+    "static/css/main.b1a086eb.chunk.css",
+    "static/js/main.a10ed6d7.chunk.js"
+  ]
+}
