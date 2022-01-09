@@ -5,6 +5,7 @@ const ButtonStyle = styled.button`
   font-family: Larsseit;
   font-size: 16px;
   letter-spacing: 0.105em;
+  line-height: 1.4375em;
   font-style: 700;
 
   color: ${props => props.textColor};
@@ -19,6 +20,7 @@ const ButtonStyle = styled.button`
 
   @media (max-width: 544px) {
     font-size: 15px;
+    width: 15.35em;
   }
 
   @media (max-width: 320px) {
