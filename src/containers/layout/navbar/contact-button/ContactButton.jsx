@@ -37,12 +37,19 @@ const ContactLink = styled.button`
     transition: all 0.7s;
   }
   @media (max-width: 768px) {
-    margin: 0 auto;
+    margin: auto;
     outline: 1px solid rgb(11, 0, 158);
     position: absolute;
     left: 50%;
     bottom: 5px;
     transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      text-align: center;
+      margin: auto;
+    }
   }
   @media (max-width: 544px) {
     font-size: 12px;
@@ -56,7 +63,7 @@ export default React.memo(function ContactButton({
   return (
     <Contact existence={activity}>
       <ContactLink onClick={elementId => scrollTo(blockId)}>
-        Contact us
+        <span>Contact us</span>
       </ContactLink>
     </Contact>
   )
