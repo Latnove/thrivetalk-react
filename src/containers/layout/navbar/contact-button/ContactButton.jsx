@@ -47,6 +47,7 @@ const ContactLink = styled.button`
     align-items: center;
     justify-content: center;
     span {
+      line-height: 100%;
       text-align: center;
       margin: auto;
     }
