@@ -201,9 +201,13 @@ export default function Navbar() {
               </li>
             </List>
 
-            <ContactButton activity={'none'} blockId="contact-us" />
+            <ContactButton
+              activity={'none'}
+              blockId="contact-us"
+              value={stateObjects}
+            />
           </Menu>
-          <ContactButton blockId="contact-us" />
+          <ContactButton blockId="contact-us" value={stateObjects} />
         </HeaderBody>
       </Container>
     </Header>

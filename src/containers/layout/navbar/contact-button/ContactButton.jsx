@@ -60,10 +60,21 @@ const ContactLink = styled.button`
 export default React.memo(function ContactButton({
   activity = null,
   blockId,
+  value,
 }) {
+  const handleClick = () => {
+    scrollTo(blockId)
+    if (value.burger.current.classList.contains('_active')) {
+      document.body.classList.remove('_lock')
+      value.burger.current.classList.remove('_active')
+      value.menu.current.classList.remove('_active')
+      value.isMenuOpen.current = false
+    }
+  }
+
   return (
     <Contact existence={activity}>
-      <ContactLink onClick={elementId => scrollTo(blockId)}>
+      <ContactLink onClick={handleClick}>
         <span>Contact us</span>
       </ContactLink>
     </Contact>
