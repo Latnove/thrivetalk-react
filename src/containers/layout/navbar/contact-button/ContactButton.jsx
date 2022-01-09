@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
-import debounce from '../../../../components/utilities/debounce'
 import scrollTo from '../../../../components/utilities/scrollTo'
 
 const Contact = styled.div`
@@ -12,9 +11,9 @@ const Contact = styled.div`
   }
   @media (max-width: 768px) {
     display: ${props =>
-      props.existence ? (props.existence = 'flex') : 'none'};
+      props.existence ? (props.existence = 'block') : 'none'};
+    flex: 0 1 100%;
     position: relative;
-    height: ${props => (props.height ? props.height + 'vh' : '0px')};
     min-height: 90px;
     left: 0;
     top: 0;
@@ -51,39 +50,11 @@ const ContactLink = styled.button`
 `
 
 export default React.memo(function ContactButton({
-  list = null,
   activity = null,
   blockId,
-  value,
 }) {
-  const [topHeight, setTopHeight] = useState(null)
-  const windowHeight = useRef(window.innerHeight)
-
-  useEffect(() => {
-    function setContactHeight() {
-      if (list !== null) {
-        const listHeight =
-          list.current.offsetHeight + value.nav.current.offsetHeight
-        setTopHeight(
-          ((windowHeight.current - listHeight) / windowHeight.current) *
-            100
-        )
-      }
-    }
-    const handleResize = () => {
-      windowHeight.current = window.innerHeight
-      setContactHeight()
-    }
-
-    window.addEventListener('resize', debounce(handleResize, 500))
-    setContactHeight()
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [list, value])
-
   return (
-    <Contact height={topHeight} existence={activity}>
+    <Contact existence={activity}>
       <ContactLink onClick={elementId => scrollTo(blockId)}>
         Contact us
       </ContactLink>
