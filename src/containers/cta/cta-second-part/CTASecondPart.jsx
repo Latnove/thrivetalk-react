@@ -95,7 +95,7 @@ const SubTitle = styled.h3`
   }
   @media (max-width: 544px) {
     font-size: 32px;
-    width: 94%;
+    width: 90%;
     margin: 0 auto 0.45em;
   }
   @media (max-width: 320px) {
