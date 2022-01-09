@@ -18,7 +18,7 @@ const Item = styled.div`
 `
 const Title = styled.h4`
   font-size: 14px;
-  line-height: 0.785em;
+  line-height: 1.1em;
   letter-spacing: -0.006em;
   color: var(--color-dark-blue);
   text-transform: uppercase;
