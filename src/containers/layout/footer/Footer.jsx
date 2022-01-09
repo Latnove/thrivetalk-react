@@ -1,7 +1,12 @@
 import React from 'react'
+import FooterInfo from './footer-info/FooterInfo'
+import FooterLegal from './footer-legal/FooterLegal'
 
-const Footer = () => {
-  return <div></div>
+export default function Footer() {
+  return (
+    <footer>
+      <FooterInfo />
+      <FooterLegal />
+    </footer>
+  )
 }
-
-export default Footer
