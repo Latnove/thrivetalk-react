@@ -38,6 +38,8 @@ const Content = styled.div`
     }
     @media (max-width: 320px) {
       font-size: 22px;
+      width: 94%;
+      margin: 0 auto;
       padding: 1.4em 0 0 0;
     }
   }
