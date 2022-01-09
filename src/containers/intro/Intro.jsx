@@ -482,8 +482,8 @@ export default function Intro() {
 
               <Text introText>
                 Our highly talented therapists can help you with a range of
-                issues including relationships, sex, PTSD, depression,
-                social anxiety, or even just caring for yourself more.
+                issues including relationships, PTSD, depression, social
+                anxiety, or even just caring for yourself more.
               </Text>
 
               <Links>
