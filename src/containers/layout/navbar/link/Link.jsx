@@ -28,10 +28,13 @@ const LinkStyle = styled.a`
     }
   }
   @media (max-width: 768px) {
-    margin: auto 0;
     font-size: 20px;
-    padding: 0 0 0 15px;
     width: 100%;
+    margin: auto 0;
+    padding: 0 0 0 15px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
   }
   @media (max-width: 544px) {
     font-size: 16px;
