@@ -146,19 +146,6 @@ export default function Navbar() {
     }
   }, [])
 
-  const handleClick = blockId => {
-    const scrollBlock = document.getElementById(blockId)
-    const scrollValue =
-      scrollBlock.getBoundingClientRect().top +
-      window.pageYOffset -
-      navRef.current.offsetHeight
-
-    window.scrollTo({
-      top: scrollValue,
-      behavior: 'smooth',
-    })
-  }
-
   function scrollCheck() {
     let scrollY = window.scrollY
 
