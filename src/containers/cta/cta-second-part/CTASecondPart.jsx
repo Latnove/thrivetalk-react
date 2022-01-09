@@ -90,16 +90,17 @@ const SubTitle = styled.h3`
     margin: 0 auto 0.35em;
   }
   @media (max-width: 768px) {
-    margin: 0 auto 0.3em;
     font-size: 40px;
+    margin: 0 auto 0.3em;
   }
   @media (max-width: 544px) {
-    margin: 0 auto 0.45em;
     font-size: 32px;
+    width: 94%;
+    margin: 0 auto 0.45em;
   }
   @media (max-width: 320px) {
-    margin: 0 auto 0.3em;
     font-size: 27px;
+    margin: 0 auto 0.3em;
   }
 `
 const Text = styled.p`
