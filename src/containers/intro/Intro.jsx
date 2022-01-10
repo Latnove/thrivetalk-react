@@ -249,9 +249,10 @@ const Links = styled.div`
       margin: 0 0 0 0;
     }
     & Button:nth-of-type(2) {
-      margin: 15px 0 0 0;
-      float: right;
+      width: initial;
       text-align: right;
+      float: right;
+      margin: 15px 0 0 0;
     }
   }
 
