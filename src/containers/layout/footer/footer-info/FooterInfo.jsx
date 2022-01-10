@@ -121,8 +121,9 @@ const Text = styled.div`
     max-width: 8.928em;
   }
   @media (max-width: 768px) {
-    display: inline;
+    display: block;
     text-align: center;
+    margin: 0 auto;
     &.footer-info__text_one p {
       width: 94%;
       margin: 0 auto;
