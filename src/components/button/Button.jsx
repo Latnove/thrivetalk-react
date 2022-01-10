@@ -20,7 +20,7 @@ const ButtonStyle = styled.button`
 
   @media (max-width: 544px) {
     font-size: 15px;
-    width: 15.35em;
+    max-width: 15.35em;
   }
 
   @media (max-width: 320px) {
