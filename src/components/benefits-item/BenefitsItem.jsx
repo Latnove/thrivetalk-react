@@ -15,10 +15,16 @@ const Item = styled.div`
   }
   @media (max-width: 544px) {
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     padding: 0 0 0 0;
   }
 `
 const Content = styled.div`
+  max-width: 300px;
+  @media (max-width: 544px) {
+    max-width: 270px;
+  }
   h3 {
     font-size: 28px;
     font-weight: 400;
@@ -30,10 +36,12 @@ const Content = styled.div`
     }
     @media (max-width: 768px) {
       padding: 1.3em 0 0 0;
+      width: 90%;
     }
     @media (max-width: 544px) {
       font-size: 26px;
       text-align: center;
+      margin: 0 auto;
       padding: 1.4em 0 0 0;
     }
     @media (max-width: 320px) {
@@ -61,6 +69,7 @@ const Content = styled.div`
       padding: 0 0 1em 0;
     }
     @media (max-width: 544px) {
+      max-width: 250px;
       text-align: center;
       margin: 0.9em auto 0;
       padding: 0 0 0.3em 0;
