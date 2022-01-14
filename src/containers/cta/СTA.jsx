@@ -27,11 +27,13 @@ export default function СTA() {
   const handleClick = () => {
     modalBgRef.current.classList.add('_active')
     modalRef.current.classList.add('_active')
+    document.body.classList.add('_lock')
   }
   const closeDataModal = event => {
     if (event.target === modalBgRef.current) {
       modalBgRef.current.classList.remove('_active')
       modalRef.current.classList.remove('_active')
+      document.body.classList.remove('_lock')
     }
   }
 
