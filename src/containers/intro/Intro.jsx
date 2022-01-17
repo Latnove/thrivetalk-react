@@ -116,7 +116,6 @@ const Logo = styled(SiteLogo)`
   }
 `
 const Title = styled.h1`
-  font-family: Larsseit;
   color: var(--color-dark-blue);
   font-weight: 700;
   font-size: 48px;

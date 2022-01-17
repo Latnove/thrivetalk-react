@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const MainTitle = styled.h3`
-  font-family: Larsseit;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4375em;

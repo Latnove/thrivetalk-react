@@ -54,7 +54,6 @@ const Text = styled.div`
   }
   & p {
     font-size: 32px;
-    font-family: Larsseit;
     font-weight: 700;
     line-height: 1.12em;
     letter-spacing: -0.006em;

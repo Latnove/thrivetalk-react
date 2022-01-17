@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const MainText = styled.p`
-  font-family: Larsseit;
   color: #fff;
   font-size: 24px;
   font-weight: 400;

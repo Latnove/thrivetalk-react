@@ -5,7 +5,6 @@ import scrollTo from '../../../../components/utilities/scrollTo'
 const LinkStyle = styled.a`
   color: #22356f;
   font-size: 15px;
-  font-family: 'Larsseit';
   text-decoration: none;
   padding: 0.2142em 0.3571em 0.7142em 0.3571em;
   position: relative;

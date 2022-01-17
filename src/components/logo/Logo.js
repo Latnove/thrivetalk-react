@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const SiteLogo = styled.div`
   color: #62d0df;
-  font-family: Larsseit;
   font-size: 24px;
   font-weight: 700;
   line-height: 27px;

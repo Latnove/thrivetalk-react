@@ -25,7 +25,6 @@ const Inner = styled.div`
   }
 `
 const Title = styled.h2`
-  font-family: Larsseit;
   font-weight: 700;
   font-size: 36px;
   line-height: 0.762em;

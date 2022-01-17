@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ButtonStyle = styled.button`
-  font-family: Larsseit;
   font-size: 16px;
   letter-spacing: 0.105em;
   line-height: 1.4375em;

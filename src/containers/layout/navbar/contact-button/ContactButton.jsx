@@ -20,7 +20,6 @@ const Contact = styled.div`
   }
 `
 const ContactLink = styled.button`
-  font-family: 'Larsseit';
   color: #fff;
   font-size: 14px;
   font-weight: 700;
