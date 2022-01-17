@@ -16,16 +16,17 @@ const Inner = styled.div`
   }
 `
 const Row = styled.div`
+  font-size: 16px;
   text-align: center;
   margin: 0 auto;
-  & ${MainTitle} {
-    opacity: 0.5;
-    cursor: pointer;
-    display: inline;
-    :hover {
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
+`
+const Title = styled(MainTitle)`
+  opacity: 0.5;
+  cursor: pointer;
+  display: inline;
+  :hover {
+    opacity: 0.7;
+    transition: opacity 0.2s;
   }
 `
 
@@ -52,7 +53,7 @@ export default function Services() {
     <section ref={servicesRef} id="services">
       <Inner>
         <Row>
-          <MainTitle onClick={titleClick}>WE CAN HELP YOU WITH</MainTitle>
+          <Title onClick={titleClick}>We can help you with</Title>
         </Row>
         <ServiceFirstPart />
         <ServiceSecondPart />
