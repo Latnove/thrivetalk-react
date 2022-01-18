@@ -83,12 +83,12 @@ const Content = styled.div`
   }
 `
 
-export default function BenefitsItem({ title, text }) {
+export default function BenefitsItem({ className, title, text }) {
   return (
     <Item>
       <Content>
-        <h3>{title}</h3>
-        <p>{text}</p>
+        <h3 className={className}>{title}</h3>
+        <p className={className}>{text}</p>
       </Content>
     </Item>
   )
