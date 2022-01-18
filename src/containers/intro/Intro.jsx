@@ -450,10 +450,10 @@ const Figure = styled.div`
     &:nth-of-type(2) {
       left: auto;
       top: 50%;
-      transform: translate(0, -50%) scale(0.5);
+      transform: translate(0, -50%) scale(0.3);
       &._active-anim {
         transform: translate(0, -50%) scale(1);
-        transition: all 0.9s ease 0.4s;
+        transition: all 0.8s ease 0.3s;
       }
     }
   }
