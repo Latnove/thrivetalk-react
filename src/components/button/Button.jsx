@@ -30,10 +30,16 @@ const ButtonStyle = styled.button`
 export default React.memo(function Button({
   text,
   textColor = '#fab63e',
+  className,
   onClick,
 }) {
   return (
-    <ButtonStyle onClick={onClick} type="button" textColor={textColor}>
+    <ButtonStyle
+      className={className}
+      onClick={onClick}
+      type="button"
+      textColor={textColor}
+    >
       <span>{text}</span>
     </ButtonStyle>
   )
