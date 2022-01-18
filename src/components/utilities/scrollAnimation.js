@@ -39,11 +39,11 @@ export default function animations(animItems) {
     }, 500)
   }
 
-  // if (window.matchMedia('(max-width: 993px)').matches) {
-  //   animItems.forEach(item => {
-  //     if (!item.classList.contains('_anim-no-hide')) {
-  //       item.classList.add('_anim-no-hide')
-  //     }
-  //   })
-  // }
+  if (window.matchMedia('(max-width: 993px)').matches) {
+    animItems.forEach(item => {
+      if (!item.classList.contains('_anim-no-hide')) {
+        item.classList.add('_anim-no-hide')
+      }
+    })
+  }
 }
