@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { BenefitsItem } from '../../components/'
+import scrollAnimation from '../../components/utilities/scrollAnimation.js'
 
 const Inner = styled.div`
   max-width: 1520px;
@@ -35,40 +36,51 @@ const Inner = styled.div`
 `
 
 export default function Benefits() {
+  useEffect(() => {
+    const animItems = document.querySelectorAll('.benefits-anim')
+    scrollAnimation(animItems)
+  }, [])
+
   return (
     <section id="benefits">
       <Inner>
         <BenefitsItem
+          className="benefits-anim"
           title="Nutritional Plans"
           text="Nutritional Facts on some shitty things that 
           you don’t care about and even we don’t , I need to 
           replace this copy."
         />
         <BenefitsItem
+          className="benefits-anim"
           title="Weight Loss"
           text="Nutritional Facts on some shitty things that 
           you don’t care about and even we don’t , I need to 
           replace this copy."
         />
         <BenefitsItem
+          className="benefits-anim"
           title="Mental Peace"
           text="Nutritional Facts on some shitty things that 
           you don’t care about and even we don’t , I need to 
           replace this copy."
         />
         <BenefitsItem
+          className="benefits-anim"
           title="Home Training"
           text="Nutritional Facts on some shitty things that 
           you don’t care about and even we don’t , I need to 
           replace this copy."
         />
         <BenefitsItem
+          className="benefits-anim"
           title="Work/Life Balance"
           text="Nutritional Facts on some shitty things that 
           you don’t care about and even we don’t , I need to 
           replace this copy."
         />
         <BenefitsItem
+          className="benefits-anim"
           title="Cardio"
           text="Nutritional Facts on some shitty things that 
           you don’t care about and even we don’t , I need to 

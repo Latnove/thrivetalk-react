@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { autumn_goodman } from '../../../../assets/images/images.js'
 import FooterInfoItem from './FooterInfoItem.jsx'
+import scrollAnimation from '../../../../components/utilities/scrollAnimation.js'
 
 const Inner = styled.div`
   display: flex;
@@ -13,6 +14,13 @@ const Inner = styled.div`
 `
 const Image = styled.div`
   flex: 0 1 620px;
+  opacity: 0;
+  transform: scale(0);
+  &._active-anim {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.7s ease 0.2s;
+  }
   @media (max-width: 1440px) {
     max-width: 450px;
   }
@@ -45,6 +53,11 @@ const Content = styled.div`
   flex-direction: row;
   justify-content: end;
   margin: 70px 0 0 100px;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.3s ease 0.3s;
+  }
   @media (max-width: 1440px) {
     margin: 60px 0 0 55px;
   }
@@ -135,13 +148,17 @@ const Text = styled.div`
   }
 `
 export default function FooterInfo() {
+  useEffect(() => {
+    const animItems = document.querySelectorAll('.footer-info-anim')
+    scrollAnimation(animItems)
+  }, [])
   return (
     <Inner>
-      <Image>
+      <Image className="footer-info-anim">
         <img src={autumn_goodman} alt="This is a autumn good man" />
       </Image>
 
-      <Content>
+      <Content className="footer-info-anim">
         <FooterInfoItem text="SOME INFO">
           <Text className="footer-info__text_one">
             <p>

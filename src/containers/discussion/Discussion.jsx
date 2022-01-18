@@ -221,7 +221,7 @@ export default function Discussion() {
           </Text>
         </Container>
 
-        <Image className="discussion-anim">
+        <Image className="discussion-anim _anim-no-hide">
           <Line></Line>
 
           <img src={stand_girl} alt="There is a girl" />

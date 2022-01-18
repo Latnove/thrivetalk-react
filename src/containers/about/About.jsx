@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Container, MainText, MainTitle } from '../../components'
+import scrollAnimation from '../../components/utilities/scrollAnimation.js'
 
 const Inner = styled(Container)`
   padding: 156px 0 0 0;
@@ -25,6 +26,11 @@ const Inner = styled(Container)`
 const Title = styled(MainTitle)`
   position: absolute;
   left: 0px;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.6s ease 0.3s;
+  }
 
   @media (max-width: 992px) {
     left: 35px;
@@ -44,6 +50,11 @@ const Text = styled(MainText)`
   color: var(--color-dark-blue);
   max-width: 24.6667em;
   margin: 0 auto;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.6s ease 0.3s;
+  }
 
   @media (max-width: 992px) {
     padding: 55px 0 0 0;
@@ -66,12 +77,16 @@ const Text = styled(MainText)`
   }
 `
 export default function About() {
+  useEffect(() => {
+    const animItems = document.querySelectorAll('.about-anim')
+    scrollAnimation(animItems)
+  }, [])
   return (
     <section id="about">
       <Inner>
-        <Title>About Us</Title>
+        <Title className="about-anim">About Us</Title>
 
-        <Text>
+        <Text className="about-anim">
           We want to help you thrive! Whether you are just looking for
           someone to talk to, or are struggling with a mental wellness
           issue were here to help. Our highly talented therapists can help

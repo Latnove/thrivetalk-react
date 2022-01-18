@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { MainTitle, CTAText, Button } from '../../../components'
 import { funny_man } from '../../../assets/images/images.js'
+import scrollAnimation from '../../../components/utilities/scrollAnimation.js'
 
 const Inner = styled.div`
   background-color: var(--color-dark-blue);
@@ -17,6 +18,15 @@ const Inner = styled.div`
 `
 const Content = styled.div`
   padding: 103px 11vw 42px 35px;
+  & Button {
+    opacity: 0;
+    transform: translate(0, 25px);
+    &._active-anim {
+      opacity: 1;
+      transform: translate(0);
+      transition: all 0.4s ease 0.25s;
+    }
+  }
   @media (max-width: 1440px) {
     padding: 80px 60px 37px 35px;
   }
@@ -28,6 +38,9 @@ const Content = styled.div`
     position: relative;
     Button {
       float: right;
+      &._active-anim {
+        transition: all 0.4s ease 0.35s;
+      }
     }
   }
   @media (max-width: 768px) {
@@ -44,6 +57,9 @@ const Content = styled.div`
       transform: translate(-50%, 0);
       position: relative;
       left: 50%;
+      &._active-anim {
+        transform: translate(-50%, 0);
+      }
     }
   }
   @media (max-width: 320px) {
@@ -53,6 +69,13 @@ const Content = styled.div`
 const Title = styled(MainTitle)`
   color: #fff;
   margin: 0 0 14.375em 0;
+  opacity: 0;
+  transform: translate(0, -25px);
+  &._active-anim {
+    opacity: 1;
+    transform: translate(0);
+    transition: all 0.4s ease 0.2s;
+  }
   @media (max-width: 1440px) {
     margin: 0 0 13em 0;
   }
@@ -61,6 +84,9 @@ const Title = styled(MainTitle)`
   }
   @media (max-width: 992px) {
     margin: 0 0 1.4em 0;
+    &._active-anim {
+      transition: all 0.4s ease 0.35s;
+    }
   }
   @media (max-width: 768px) {
     margin: 0 0 1.2em 0;
@@ -68,6 +94,7 @@ const Title = styled(MainTitle)`
   @media (max-width: 544px) {
     text-align: center;
     margin: 0 0 1em 0;
+    transform: translate(0, -15px);
   }
   @media (max-width: 320px) {
     margin: 0 0 1.1em 0;
@@ -78,6 +105,11 @@ const SubTitle = styled.h3`
   line-height: 1.46875em;
   letter-spacing: -0.01em;
   margin: 0 0 1.17875em 0;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.2s ease 0.4s;
+  }
   @media (max-width: 1440px) {
     font-size: 58px;
   }
@@ -107,6 +139,11 @@ const Text = styled.p`
   font-weight: 400;
   max-width: 16.111em;
   margin: 0 0 2.08em 0;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.2s ease 0.4s;
+  }
   @media (max-width: 1440px) {
     margin: 0 0 1.9em 0;
   }
@@ -137,6 +174,11 @@ const Text = styled.p`
   }
 `
 const Image = styled.div`
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.2s ease 0.3s;
+  }
   @media (min-width: 1441px) {
     flex: 0 1 650px;
   }
@@ -150,6 +192,9 @@ const Image = styled.div`
     max-width: 720px;
     height: 450px;
     overflow: hidden;
+    &._active-anim {
+      transition: opacity 1.5s ease 0.2s;
+    }
     img {
       margin: -30% 0 0 0;
     }
@@ -170,25 +215,30 @@ const Image = styled.div`
 `
 
 export default function CTASecondPart({ onClick, blockId }) {
+  useEffect(() => {
+    const animItems = document.querySelectorAll('.cta-second-anim')
+    scrollAnimation(animItems)
+  }, [])
   return (
     <Inner id={blockId}>
       <Content>
-        <Title>CONTACT US</Title>
-        <SubTitle>Ready. Set. Smile</SubTitle>
+        <Title className="cta-second-anim">CONTACT US</Title>
+        <SubTitle className="cta-second-anim">Ready. Set. Smile</SubTitle>
         <CTAText color="#fff">
-          <Text>
+          <Text className="cta-second-anim">
             Take the free online assessment to see if you are a candidate
             and get started on your journey.
           </Text>
         </CTAText>
         <Button
           onClick={onClick}
+          className="cta-second-anim"
           text="GET HELP NOW"
           textColor="#62D0DF"
         />
       </Content>
 
-      <Image>
+      <Image className="cta-second-anim _anim-no-hide">
         <img src={funny_man} alt="Here is a cheerful man" />
       </Image>
     </Inner>

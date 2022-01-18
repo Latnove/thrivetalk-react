@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { MainTitle, Button, CTAText } from '../../../components/'
 import { sales_navigator } from '../../../assets/images/images.js'
+import scrollAnimation from '../../../components/utilities/scrollAnimation.js'
 
 const Inner = styled.div`
   display: flex;
@@ -12,6 +13,11 @@ const Inner = styled.div`
   }
 `
 const Image = styled.div`
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.2s ease 0.3s;
+  }
   @media (min-width: 1441px) {
     flex: 0 1 580px;
   }
@@ -24,6 +30,9 @@ const Image = styled.div`
     max-width: 720px;
     height: 450px;
     overflow: hidden;
+    &._active-anim {
+      transition: opacity 1.5s ease 0.2s;
+    }
     img {
       max-height: initial;
       margin: -35% 0 0 0;
@@ -45,6 +54,15 @@ const Image = styled.div`
 `
 const Content = styled.div`
   padding: 103px 0 42px 105px;
+  & Button {
+    opacity: 0;
+    transform: translate(0, 25px);
+    &._active-anim {
+      opacity: 1;
+      transform: translate(0);
+      transition: all 0.4s ease 0.25s;
+    }
+  }
   @media (max-width: 1440px) {
     padding: 80px 0 37px 80px;
   }
@@ -56,6 +74,9 @@ const Content = styled.div`
     Button {
       float: right;
       margin: 0;
+      &._active-anim {
+        transition: all 0.4s ease 0.35s;
+      }
     }
   }
   @media (max-width: 768px) {
@@ -69,9 +90,12 @@ const Content = styled.div`
     padding: 35px 0 25px 0;
     Button {
       float: initial;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, 15px);
       position: relative;
       left: 50%;
+      &._active-anim {
+        transform: translate(-50%, 0);
+      }
     }
   }
   @media (max-width: 320px) {
@@ -80,6 +104,13 @@ const Content = styled.div`
 `
 const Title = styled(MainTitle)`
   margin: 0 0 225px 0;
+  opacity: 0;
+  transform: translate(0, -25px);
+  &._active-anim {
+    opacity: 1;
+    transform: translate(0);
+    transition: all 0.4s ease 0.2s;
+  }
   @media (max-width: 1440px) {
     margin: 0 0 200px 0;
   }
@@ -88,6 +119,9 @@ const Title = styled(MainTitle)`
   }
   @media (max-width: 992px) {
     margin: 0 0 55px 0;
+    &._active-anim {
+      transition: all 0.4s ease 0.35s;
+    }
   }
   @media (max-width: 768px) {
     margin: 0 0 40px 0;
@@ -95,6 +129,7 @@ const Title = styled(MainTitle)`
   @media (max-width: 544px) {
     text-align: center;
     margin: 0 auto 20px;
+    transform: translate(0, -15px);
   }
   @media (max-width: 320px) {
     margin: 0 auto 15px;
@@ -103,6 +138,11 @@ const Title = styled(MainTitle)`
 const Text = styled.p`
   margin: 0 0 4.22em 0;
   max-width: 19.4em;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.2s ease 0.4s;
+  }
   span {
     color: var(--color-blue);
   }
@@ -134,22 +174,28 @@ const Text = styled.p`
 `
 
 export default function CTAFirstPart({ onClick, blockId }) {
+  useEffect(() => {
+    const animItems = document.querySelectorAll('.cta-first-anim')
+    scrollAnimation(animItems)
+  }, [])
+
   return (
     <Inner id={blockId}>
-      <Image>
+      <Image className="cta-first-anim _anim-no-hide">
         <img src={sales_navigator} alt="Two people are talking here" />
       </Image>
 
       <Content>
-        <Title>YOU SHOULD ALSO KNOW</Title>
+        <Title className="cta-first-anim">YOU SHOULD ALSO KNOW</Title>
         <CTAText color="#22356F">
-          <Text>
+          <Text className="cta-first-anim">
             MDD affects more than 16.1 million American adults, or about
             6.7% of the U.S. population age 18 and older in a given year.
             We at <span>ThriveTalk</span> can help you.
           </Text>
         </CTAText>
         <Button
+          className="cta-first-anim"
           text="GET HELP NOW"
           textColor="#fab63e"
           onClick={onClick}
