@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/thrivetalk-react/static/css/main.03683fcc.chunk.css",
-    "main.js": "/thrivetalk-react/static/js/main.e4da0379.chunk.js",
-    "main.js.map": "/thrivetalk-react/static/js/main.e4da0379.chunk.js.map",
+    "main.js": "/thrivetalk-react/static/js/main.ae02ec84.chunk.js",
+    "main.js.map": "/thrivetalk-react/static/js/main.ae02ec84.chunk.js.map",
     "runtime-main.js": "/thrivetalk-react/static/js/runtime-main.8ff885bb.js",
     "runtime-main.js.map": "/thrivetalk-react/static/js/runtime-main.8ff885bb.js.map",
     "static/js/2.3fa06344.chunk.js": "/thrivetalk-react/static/js/2.3fa06344.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.8ff885bb.js",
     "static/js/2.3fa06344.chunk.js",
     "static/css/main.03683fcc.chunk.css",
-    "static/js/main.e4da0379.chunk.js"
+    "static/js/main.ae02ec84.chunk.js"
   ]
 }
