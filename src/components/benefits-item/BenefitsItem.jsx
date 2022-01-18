@@ -31,6 +31,13 @@ const Content = styled.div`
     line-height: 1.178em;
     letter-spacing: -0.03em;
     padding: 1.965em 0 0 0;
+    opacity: 0;
+    transform: translate(0, 20px);
+    &._active-anim {
+      opacity: 1;
+      transform: translate(0);
+      transition: all 0.5s ease 0.2s;
+    }
     @media (max-width: 992px) {
       padding: 1.6em 0 0 0;
     }
@@ -55,10 +62,16 @@ const Content = styled.div`
     font-size: 16px;
     line-height: 1.5625em;
     letter-spacing: -0.03em;
-    opacity: 0.5;
     max-width: 18.75em;
     margin: 1.75em 0 0 0;
     padding: 0 0 2.4em 0;
+    opacity: 0;
+    transform: translate(0, 20px);
+    &._active-anim {
+      opacity: 0.5;
+      transform: translate(0);
+      transition: all 0.5s ease 0.4s;
+    }
     @media (max-width: 992px) {
       margin: 1.4em 0 0 0;
       padding: 0 0 1.5em 0;
