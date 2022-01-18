@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { Container, SiteLogo, Button, MainText } from '../../components'
+import scrollAnimation from '../../components/utilities/scrollAnimation.js'
 import { interview } from '../../assets/images/images.js'
 
 const Block = styled.section`
@@ -97,6 +98,13 @@ const Inner = styled.div`
 `
 const Logo = styled(SiteLogo)`
   padding: 5.83em 0 0 0;
+  opacity: 0;
+  transform: translate(0, 25px);
+  &._active-anim {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 0.3s;
+  }
 
   @media (max-width: 992px) {
     padding-top: 4.5em;
@@ -123,6 +131,13 @@ const Title = styled.h1`
   line-height: 1.1133em;
   text-transform: uppercase;
   margin: 0.8em 0 0 0;
+  opacity: 0;
+  transform: translate(0, 30px);
+  &._active-anim {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 0.3s ease 0.2s;
+  }
 
   @media (max-width: 1200px) {
     font-size: 40px;
@@ -153,6 +168,13 @@ const Text = styled(MainText)`
   line-height: 1.75791em;
   color: var(--color-dark-blue);
   margin: 2.96em 0 0 0;
+  opacity: 0;
+  transform: translate(0, 40px);
+  &._active-anim {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 0.45s ease 0.4s;
+  }
 
   @media (max-width: 1200px) {
     margin: 2.2em 0 0 0;
@@ -187,6 +209,9 @@ const Links = styled.div`
   align-items: center;
   gap: 2.375em;
   margin: 3.9375em 0 0 0;
+  & button {
+    opacity: 0;
+  }
 
   & Button:nth-of-type(1) {
     width: 9.375em;
@@ -195,6 +220,10 @@ const Links = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    &._active-anim {
+      opacity: 1;
+      transition: all 1s ease 0.65s;
+    }
   }
   & Button:nth-of-type(1):hover {
     background-color: #eea11d;
@@ -202,7 +231,10 @@ const Links = styled.div`
   }
   & Button:nth-of-type(2) {
     position: relative;
-
+    &._active-anim {
+      opacity: 1;
+      transition: all 1s ease 0.9s;
+    }
     & span::after {
       content: '';
       width: 100%;
@@ -311,10 +343,14 @@ const Figure = styled.div`
   height: 34.0625em;
   background: #edfdff;
   border-radius: 19.6875em;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1.5s ease 0.1s;
+  }
 
   &:nth-of-type(1) {
     position: absolute;
-
     left: -22.5em;
     top: 2.1875em;
     transform: matrix(-0.5, 0.87, 0.87, 0.5, 0, 0);
@@ -389,6 +425,9 @@ const Figure = styled.div`
     height: 26.25em;
     border-radius: 3.4em;
     margin: 0 auto;
+    &._active-anim {
+      transition: opacity 1.4s ease 0.6s;
+    }
 
     &:nth-of-type(1) {
       display: none;
@@ -408,6 +447,15 @@ const Figure = styled.div`
     height: 17.5em;
     border: 0.625em solid #edfdff;
     border-radius: 50%;
+    &:nth-of-type(2) {
+      left: auto;
+      top: 50%;
+      transform: translate(0, -50%) scale(0.5);
+      &._active-anim {
+        transform: translate(0, -50%) scale(1);
+        transition: all 0.9s ease 0.4s;
+      }
+    }
   }
 `
 const FigureImage = styled.img`
@@ -450,6 +498,9 @@ export default function Intro() {
 
   useEffect(() => {
     navRef.current = document.querySelector('header')
+
+    const animItems = document.querySelectorAll('.intro-anim')
+    scrollAnimation(animItems)
   }, [])
 
   const scrollToBlock = elementId => {
@@ -476,11 +527,13 @@ export default function Intro() {
         <FirstPart>
           <Container>
             <Inner>
-              <Logo>Thrivetalk</Logo>
+              <Logo className="intro-anim">Thrivetalk</Logo>
 
-              <Title>HELPING YOU THRIVE IN ALL AREAS OF LIFE</Title>
+              <Title className="intro-anim">
+                HELPING YOU THRIVE IN ALL AREAS OF LIFE
+              </Title>
 
-              <Text introText>
+              <Text className="intro-anim" introText>
                 Our highly talented therapists can help you with a range of
                 issues including relationships, PTSD, depression, social
                 anxiety, or even just caring for yourself more.
@@ -490,11 +543,13 @@ export default function Intro() {
                 <Button
                   text="Who am I"
                   textColor="#fff"
+                  className="intro-anim"
                   onClick={elementId => scrollToBlock('about')}
                 />
                 <Button
                   text="What do I do"
                   textColor="#fab63e"
+                  className="intro-anim"
                   onClick={elementId => scrollToBlock('benefits')}
                 />
               </Links>
@@ -503,9 +558,9 @@ export default function Intro() {
         </FirstPart>
 
         <SecondPart>
-          <Figure></Figure>
+          <Figure className="intro-anim"></Figure>
 
-          <Figure>
+          <Figure className="intro-anim">
             <FigureImage src={interview} alt="There is an interview" />
           </Figure>
         </SecondPart>
