@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Container, MainText } from '../../components'
+import scrollAnimation from '../../components/utilities/scrollAnimation'
 import { stand_girl } from '../../assets/images/images.js'
 
 const Block = styled.section`
@@ -31,7 +32,13 @@ const Title = styled.h2`
   color: #fff;
   max-width: 10em;
   padding: 4.17em 0 0 0;
-
+  opacity: 0;
+  transform: translate(0, 25px);
+  &._active-anim {
+    transform: translate(0);
+    opacity: 1;
+    transition: all 0.4s;
+  }
   @media (max-width: 1200px) {
     font-size: 30px;
     padding-top: 4em;
@@ -61,6 +68,13 @@ const Text = styled(MainText)`
   max-width: 23.125em;
   margin: 3.125em 0 0 0;
   padding: 0 0 3.8333em 0;
+  opacity: 0;
+  transform: translate(0, 40px);
+  &._active-anim {
+    transform: translate(0);
+    opacity: 1;
+    transition: all 0.4s ease 0.3s;
+  }
   & span {
     padding: 0 0 3.8333em 0;
     font-weight: 300;
@@ -111,6 +125,11 @@ const Image = styled.div`
   height: 100%;
   position: absolute;
   right: 0;
+  opacity: 0;
+  &._active-anim {
+    opacity: 1;
+    transition: opacity 1s ease 0.2s;
+  }
   & img {
     object-fit: cover;
     height: inherit;
@@ -132,6 +151,9 @@ const Image = styled.div`
     height: 400px;
     left: 45px;
     bottom: -140px;
+    &._active-anim {
+      transition: opacity 1s ease 0.5s;
+    }
     & img {
       margin-left: 0;
       border-radius: 10px;
@@ -177,13 +199,17 @@ const Line = styled.span`
 `
 
 export default function Discussion() {
+  useEffect(() => {
+    const animItems = document.querySelectorAll('.discussion-anim')
+    scrollAnimation(animItems)
+  }, [])
   return (
     <Block id="discussion">
       <Inner>
         <Container>
-          <Title>Why Thrive?</Title>
+          <Title className="discussion-anim">Why Thrive?</Title>
 
-          <Text>
+          <Text className="discussion-anim">
             Want to improve your well-being from the comfort of your own
             couch? Are you having trouble finding the right therapist?{' '}
             <span>
@@ -195,7 +221,7 @@ export default function Discussion() {
           </Text>
         </Container>
 
-        <Image>
+        <Image className="discussion-anim">
           <Line></Line>
 
           <img src={stand_girl} alt="There is a girl" />
