@@ -17,12 +17,14 @@ const App = () => {
   return (
     <div className="wrapper">
       <Navbar />
-      <Intro />
-      <Discussion />
-      <About />
-      <Services />
-      <Benefits />
-      <CTA />
+      <main>
+        <Intro />
+        <Discussion />
+        <About />
+        <Services />
+        <Benefits />
+        <CTA />
+      </main>
       <Footer />
     </div>
   )
